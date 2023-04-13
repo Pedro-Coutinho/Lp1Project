@@ -13,7 +13,7 @@ namespace LampPuzzle
 
             int input = 0;
             
-
+            PrintHandler.PrintRules();
             PrintHandler.PrintLamps(lampStatus);
 
             for (int i = 0; i < 6; i++)
