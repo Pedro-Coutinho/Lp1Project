@@ -1,21 +1,38 @@
 # LP1 Lamp Puzzle - Report
 
-* Pedro Coutinho - a21905323
-* Rodrigo Marques - a21802593
+## Pedro Coutinho - a21905323
+## Rodrigo Marques - a21802593
+* * Pedro Coutinho:
+    * Lógica base do game loop.
+    * Classe PrintHandler.
+    * Organização de código.
+    * Optimização de código.
+    * Documentação XML em Program.
+    * Fluxograma.
+    * Relatório melhorias.
 
-* Descrição da solução:
-    * O programa foi desenvolvido recorrendo a criação de 3 classes, de modo a simplificar a leitura e perfomance do projeto.
-    * Cada classe tem a sua determinada função.
-    * Pedro Coutinho: 
-        * Encarregue da class progam e a da sua respetiva           funcionalidade assim como a sua ligação com outras classes como o Print Handler e Input Handler.
+  * Rodrigo Marques:
+    * Classe InputHandler.
+    * Melhoria da classe PrintHandler.
+    * Ligação entre Program com InputHandler e PrintHandler.
+    * Documentação XML nas classes Input Hadler e Print Handler.
+    * Relatório inicial.
 
-    * Rodrigo Marques: 
-        * Encarregue da classe InputHandler, verificando se o input fornecido pelo utilizador era válido. 
-        * Conclusão e otimização da classe Print Handler, criada inicialmente pelo Pedro. 
-        * Fazendo pequenas alterações na class program para corresponder a novas variaveis criadas nas classes Input e Print Handler.
-        * Documentação XML nas classes Input Hadler e Print Handler
-        * Criação e edição de documento Readme.md
+## Git : https://github.com/Pedro-Coutinho/Lp1Project
 
-    
+## Arquitetura da solução:
+  O programa começa ao imprimir a regras do jogo e espera por um input do jogador
+  para confirmar que o mesmo se encontra pronto para jogar. Após o obter entra num
+  for durante 6 turnos no máximo, em cada ciclo do for, é pedido um input ao jogador
+  através da classe InputHandler, esse input é avaliado dentro da mesma e o programa 
+  só procede após obter um input for válido. De seguida entra num switch onde
+  decide que botão clicar e faz a lógica desse botão. Depois dá print das lâmpadas
+  e verifica se já estão todas ligadas ou não, se tiverem sai do ciclo for antecipadamente. Após 6 movimentos o ciclo for acaba e o programa dá print da
+  resolução do jogo seja esta vitória ou não.
 
-    * Fluxograma:
+  
+
+---
+## Fluxograma:
+  ---
+  ![fluxograma](Fluxograma.jpg)
