@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Linq;
 
 namespace LampPuzzle
 {
@@ -8,10 +8,10 @@ namespace LampPuzzle
         {
             bool[] lampStatus = new bool[3];
             bool victory = false;
-            int lampsOn = 0;
             int winingMoves = 0;
 
             int input = 0;
+
             
             PrintHandler.PrintRules();
             PrintHandler.PrintLamps(lampStatus);
@@ -40,24 +40,18 @@ namespace LampPuzzle
                 }
                 
                 PrintHandler.PrintLamps(lampStatus);
-                
-                foreach(bool lamp in lampStatus)
-                {
-                    if(lamp)
-                        lampsOn++; 
-                }
 
-                if (lampsOn == 3)
+                if (lampStatus.All(x => x))
                 {
                     victory = true;
                     winingMoves = i + 1;
+                    break;
                 }
-                    
-                else
-                    lampsOn = 0;
+
             }
 
             PrintHandler.Resolution(victory, winingMoves);
         }
+
     }
 }
