@@ -16,7 +16,7 @@ namespace LampPuzzle
 
             for (int i = 0; i < 6; i++)
             {
-                Int32.TryParse(Console.ReadLine(), out input);
+                input = InputHandler.ReadInput();
                 bool tempLamp = false;
                 switch (input)
                 {
