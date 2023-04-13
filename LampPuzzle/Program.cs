@@ -9,13 +9,16 @@ namespace LampPuzzle
             bool[] lampStatus = new bool[3];
             bool victory = false;
             int lampsOn = 0;
+            int winingMoves = 0;
 
             int input = 0;
+            
 
-            PrintLamps(lampStatus);
+            PrintHandler.PrintLamps(lampStatus);
 
             for (int i = 0; i < 6; i++)
             {
+                PrintHandler.PrintRound(i);
                 input = InputHandler.ReadInput();
                 bool tempLamp = false;
                 switch (input)
@@ -36,7 +39,7 @@ namespace LampPuzzle
 
                 }
                 
-                PrintLamps(lampStatus);
+                PrintHandler.PrintLamps(lampStatus);
                 
                 foreach(bool lamp in lampStatus)
                 {
@@ -45,34 +48,16 @@ namespace LampPuzzle
                 }
 
                 if (lampsOn == 3)
+                {
                     victory = true;
+                    winingMoves = i + 1;
+                }
+                    
                 else
                     lampsOn = 0;
             }
 
-            if(victory)
-                Console.WriteLine("You Win!");
-            else
-                Console.WriteLine("You Lose!");
-        }
-
-        static void PrintLamps(bool[] lamps)
-        {
-            //Instantiate String Builder
-            string output = "";
-
-            //Cycle through lamps
-            for (int i = 0; i < lamps.Length; i++)
-            {
-                //Add full square if lamp is on
-                if (lamps[i])
-                    output+= "True ";
-                else
-                    output+= "False ";
-            }
-
-            //Print the output
-            Console.WriteLine(output);
+            PrintHandler.Resolution(victory, winingMoves);
         }
     }
 }
